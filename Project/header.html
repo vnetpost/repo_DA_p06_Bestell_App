@@ -1,0 +1,59 @@
+<style>
+    header {
+        /* flex: 0 0 auto; */
+        background: #DF1067;
+        width: 100%;
+        height: 15rem;
+        display: flex;
+        justify-content: center;
+
+        @media (max-width:950px) {
+            height: 8rem;
+        }
+    }
+
+    #idHeaderContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 5rem;
+        max-width: 1440px;
+        width: 100%;
+
+        @media (max-width:950px) {
+            padding: 0rem 1.5rem;
+        }
+
+        img {
+            width: 25rem;
+
+            @media (max-width:950px) {
+                width: 15rem;
+            }
+        }
+
+        nav {
+            img {
+                width: 5rem;
+                filter: invert(100%);
+
+                @media (max-width:950px) {
+                    width: 3.5rem;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                    filter: drop-shadow(0px 0px 1rem #faebd7bd);
+                }
+            }
+        }
+    }
+</style>
+
+<div id="idHeaderContent">
+    <img src="./assets/images/Logo/Logo.svg" alt="Logo.svg">
+    <nav id="idNavHeader">
+        <img id="idNavMenuIcon" src="./assets/images/icons/navMenu.svg" alt="navMenu.svg">
+    </nav>
+</div>

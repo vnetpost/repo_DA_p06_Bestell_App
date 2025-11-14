@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon einbinden -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/Favicon/favicon-16x16.png">
+
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/pageRestaurant.css">
+    <link rel="stylesheet" href="./styles/dlgCard.css">
+    <link rel="stylesheet" href="./styles/dlgBasket.css">
+    <link rel="stylesheet" href="./styles/dlgFeedback.css">
+
+    <title>Restaurant</title>
+</head>
+
+<body>
+
+    <header>
+        <!-- Fetch header.html -->
+    </header>
+
+    <main>
+
+        <div></div>
+
+        <section id="idAddFavRest">
+            <!-- Add idRestaurantX -->
+        </section>
+
+        <section id="idDlgCardContainer">
+            <!-- Fetch dlgCard.html -->
+            <!-- then with JS -->
+        </section>
+
+        <section id="idDlgBasketContainer">
+            <!-- Fetch dlgBasket.html -->
+            <!-- then with JS -->
+        </section>
+
+        <section id="idDlgFeedbackContainer">
+            <!-- Render with JS -->
+        </section>
+
+    </main>
+
+    <footer>
+        <!-- Fetch footer.html -->
+    </footer>
+
+    <!-- #################### Script ###################### -->
+    <script>
+        ["header", "footer"].forEach(tName => {
+            fetch(`./${tName}.html`)
+                .then(resObj => resObj.text()) // converts Response-Object in Text & returns it as a Promise 
+                .then(html => {                // Get the promise (text) and use it. because {} NO return. 
+                    document.querySelector(tName).innerHTML = html;
+                });
+        });
+
+        ["Basket"].forEach(name => {
+            fetch(`./dlg${name}.html`)
+                .then(resObj => resObj.text()) // converts Response-Object in Text & returns it as a Promise
+                .then(html => {                // Get the promise (text) and use it. because {} NO return.
+                    document.getElementById(`idDlg${name}Container`).innerHTML = html;
+                });
+        });
+    </script>
+    <script type="module" src="./scripts/localStorage.js" defer></script>
+    <script type="module" src="./pageRestaurant.js" defer></script>
+</body>
+
+</html>

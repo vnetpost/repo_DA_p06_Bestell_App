@@ -1,0 +1,70 @@
+<style>
+    footer {
+        margin-top: 5rem;
+        /* margin-top: auto; */
+        /* flex: 1; */
+        /* position: fixed; */
+        /* top: 100dvh; */
+        /* transform: translate(0, -100%); */
+        /* flex: 0 0 auto; */
+        /* position: static; */
+        /* transform: none; */
+        background: #DF1067;
+        box-shadow: 0rem -0.5rem 0.5rem 0rem #DF1067;
+        /* width: 100%; */
+        height: 17rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 1rem;
+    }
+
+    #idFooterContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 5rem;
+        max-width: 1440px;
+        width: 100%;
+
+        @media (max-width:950px) {
+            padding: 0rem 2rem;
+        }
+
+        img {
+            width: 15rem;
+
+            @media (max-width:480px) {
+                width: 12rem;
+            }
+        }
+
+        #idFooterInfos {
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            gap: 1rem;
+            color: white;
+
+            @media (max-width:480px) {
+                flex-direction: column;
+
+            }
+
+            a {
+                color: white;
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                    filter: drop-shadow(0px 0px 1rem #faebd7bd);
+                }
+            }
+        }
+    }
+</style>
+
+<div id="idFooterContent">
+    <img src="./assets/images/Logo/Logo.svg" alt="Logo.svg">
+    <div id="idFooterInfos"><a href="">Impressum</a><a href="">Privacy</a></div>
+</div>

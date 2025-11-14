@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon einbinden -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/Favicon/favicon-16x16.png">
+
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <title>BestellApp</title>
+</head>
+
+<body>
+
+    <header></header>
+    <!--  -->
+    <main>
+        <section id="aot" class="content">
+            <!-- <strong>We Are EveryWhere, Pizza is EveryWhere</strong> -->
+            <strong>Bestell Mal!</strong>
+
+            <form id="idAOTform">
+                <strong>Available delivery destinations</strong>
+                <div>
+                    <figure>
+                        <img src="./assets/images/island.svg" alt="island.svg">
+                        <figcaption>
+                            <label for="">
+                                <input type="radio" name="destinations" value="island">North Sentinel Island</label>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./assets/images/Kawahiva.svg" alt="Kawahiva.svg">
+                        <figcaption>
+                            <label for="">
+                                <input type="radio" name="destinations" value="Kawahiva">Kawahiva</label>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="cBtnsArea">
+                    <button id="idBtn1" type="button">Restaurant Antarctica</button>
+                    <button id="idBtn2" type="button">Pasta Aurora</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="idMainPageFooter"></footer>
+
+    <script>
+        ["header", "footer"].forEach(tName => {
+            fetch(`./${tName}.html`)
+                .then(resObj => resObj.text()) // converts Response-Object in Text & returns it as a Promise 
+                .then(html => {                // Get the promise (text) and use it. because {} NO return. 
+                    // document.querySelectorAll(tName).forEach(refEl => refEl.innerHTML = html);
+                    document.querySelector(tName).innerHTML = html;
+                });
+        });
+    </script>
+    <script type="module" src="./pageIndex.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+#idDlgBasket {
+    border: 0;
+    padding: 1rem;
+    background: whitesmoke;
+    width: 35rem;
+    min-height: 30rem;
+    max-height: 70vh;
+    z-index: 1;
+
+    @media (max-width:2200px) {
+        width: 30rem;
+    }
+
+    @media (max-width:1370px) {
+        width: 25rem;
+    }
+
+    &.cBasketDesktopView {
+        /* position: sticky; */
+        position: fixed;
+        top: 15rem;
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        left: 100%;
+        height: 70vh;
+        transform: translate(-100%, 0%);
+
+        @media (max-width:2200px) {
+            width: 30rem;
+        }
+
+        @media (max-width:1370px) {
+            width: 25rem;
+        }
+
+        @media (min-width:2200px) {
+            left: 100%;
+        }
+
+        @media (min-width:2500px) {
+            left: 97%;
+        }
+
+        @media (min-width:2700px) {
+            left: 94%;
+        }
+
+        @media (min-width:3000px) {
+            left: 90%;
+        }
+
+        @media (min-width:3300px) {
+            left: 84%;
+        }
+
+        @media (min-width:3600px) {
+            left: 81%;
+        }
+
+        @media (min-width:4000px) {
+            left: 78%;
+        }
+
+        @media (min-width:4500px) {
+            left: 75%;
+        }
+
+        @media (min-width:5000px) {
+            left: 72%;
+        }
+
+        @media (min-width:5500px) {
+            left: 70%;
+        }
+
+        @media (min-width:6000px) {
+            left: 68%;
+        }
+    }
+
+    &.cBasketMobileView {
+        /* display: flex; will be by click on idCartBtnBarOpenBasket with JS activated */
+        flex-direction: column;
+        position: fixed;
+        border-radius: 2.5rem;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &::backdrop {
+            background: #000000a3;
+        }
+    }
+
+    .cBasketHeader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+
+        .cDeliveryOptionsBtns {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            /* padding: 1rem 0; */
+
+            button {
+                border: 0;
+                border-radius: 3rem;
+                box-shadow: 0px 0px 1.5rem #979797;
+                font-size: 1em;
+                color: #635f5f;
+                padding: 0.5rem 1rem;
+
+                &:hover {
+                    box-shadow: 0px 0px 0rem #ffffff;
+                    filter: drop-shadow(0px 0px 0.5rem #DF1067);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    #idSecOrdersContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        overflow-y: auto;
+        /* max-height: 80vh; */
+
+        .cOrders {
+            border-radius: 1rem;
+            box-shadow: 0px 0px 1.5rem #979797;
+            background: #ffffff;
+            /* max-width: 100rem; */
+            display: flex;
+            padding: 1rem 1rem;
+
+            &:hover {
+                box-shadow: 0px 0px 0rem #ffffff;
+                filter: drop-shadow(0px 0px 1rem #DF1067);
+                filter: drop-shadow(0px 0px 1rem #4a4949);
+                cursor: pointer;
+            }
+
+            .cOrderdMeals {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+
+                strong {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .cOrderTotalPrices {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        /* border: 1px solid red; */
+                        width: 7rem;
+                    }
+                }
+
+                .cOrderdMealInfos {
+                    display: flex;
+                    flex-direction: column;
+
+                    p {
+                        /* white-space: nowrap; */
+                        overflow: hidden;
+                    }
+                }
+
+                .cOrderdMealsBtnsArea {
+                    background: #e5d4d4;
+                    box-shadow: 0px 0px 0.5rem #040404;
+                    border-radius: 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0.5rem 1rem;
+
+                    button {
+                        background: #e5b0b0;
+                        border: 0;
+                        border-radius: 1rem;
+
+                        img {
+                            width: 3rem;
+                            height: 2.5rem;
+                            padding: 0.2rem;
+                        }
+
+                        &:hover {
+                            box-shadow: 0px 0px 0rem #ffffff;
+                            filter: drop-shadow(0px 0px 0.5rem #DF1067);
+                            cursor: pointer;
+                        }
+                    }
+
+                    .cOrderdMealsBtnsPlusMinus {
+                        /* border: 1px solid red; */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+
+                    .cOrderdMealsBtnDelete {}
+                }
+            }
+        }
+    }
+
+    .cSecAccounting {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: #e4c1c1;
+        box-shadow: 0px 0px 1.5rem #979797;
+        border-radius: 0rem 0rem 2rem 2rem;
+
+        .cSubTotal {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cDeliveryFee {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cEndPrice {
+            font-size: 1.1em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            background: #e5b0b0;
+            border: 0;
+            border-radius: 3rem;
+            font-size: 1.2em;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            box-shadow: 0px 0px 1rem #ffffff;
+
+            &:hover {
+                /* box-shadow: 0px 0px 0rem #ffffff; */
+                filter: drop-shadow(0px 0px 0.5rem #DF1067);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+#idCartBtnBarOpenBasket {
+    position: fixed;
+    z-index: 1;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90dvw;
+    height: 5rem;
+    border: 0;
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 2rem #000000;
+    background: #DF1067;
+    color: whitesmoke;
+    font-size: 1.5em;
+
+    @media (min-width: 951px) {
+        display: none;
+    }
+
+    @media (max-width: 950px) {
+        display: flex;
+    }
+
+    @media (max-width:480px) {
+        font-size: 1.2em;
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 2rem #000000;
+        filter: drop-shadow(0px 0px 1.5rem black);
+        cursor: pointer;
+    }
+
+    .cCartImgArea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        #idCartOrdersNumber {}
+
+        #idCartImg {
+            width: 4rem;
+            filter: invert();
+        }
+    }
+}
